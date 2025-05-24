@@ -19,4 +19,11 @@
 
 ### polybar+eww
 
+```
+# let yuck trigger a script that contains the following
+fortune=`daily_fortune random`
+eww="eww -c $HOME/.config/eww/mybar"
+$eww update fortune="$fortune"
+```
+
 ![img](imgs/fortune.png)
