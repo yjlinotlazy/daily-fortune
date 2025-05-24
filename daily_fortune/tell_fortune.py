@@ -13,10 +13,8 @@ class FortuneTeller:
 
     def tell(self) -> str:
         candidates = self.db
-        print(candidates)
         if self.maxlen > 0:
             candidates = candidates[candidates.charlen <= self.maxlen]
-        print(candidates)
         if candidates.shape[0] == 0:
             return 'No fortune'
         selected = candidates.sample(n=1)
@@ -24,7 +22,6 @@ class FortuneTeller:
     
     def _read_db(self):
         with resources.path("daily_fortune", "words.csv") as df:
-            print(df)
             db = pd.read_csv(df, header=None)
         db.columns = ['text', 'tags_raw']
         db['charlen'] = db['text'].apply(lambda x: len(x))
