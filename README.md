@@ -18,3 +18,5 @@
 ## 使用举例
 
 ### polybar+eww
+
+![img](imgs/fortune.png)
