@@ -19,7 +19,7 @@ dependencies = [
 daily_fortune = "daily_fortune.tell_fortune:main"
 
 [tool.setuptools.package-data]
-daily_fortune = ["daily_fortune/*", "*"]
+daily_fortune = ["daily_fortune/*"]
 
 [project.urls]
 "Homepage" = "https://github.com/yjlinotlazy/daily-fortune"

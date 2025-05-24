@@ -26,4 +26,4 @@ eww="eww -c $HOME/.config/eww/mybar"
 $eww update fortune="$fortune"
 ```
 
-![img](imgs/fortune.png)
+![img](daily_fortune/imgs/fortune.png)
