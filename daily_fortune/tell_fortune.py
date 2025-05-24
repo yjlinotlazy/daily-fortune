@@ -1,5 +1,6 @@
 import argparse
 import pandas as pd
+from importlib import resources
 
 class FortuneTeller:
     def __init__(self, mode: str = 'random') -> None:
@@ -15,7 +16,8 @@ class FortuneTeller:
         return selected['text'].iloc[0]
     
     def _read_db(self):
-        db = pd.read_csv('words.csv', header=None)
+        with resources.path("daily_fortune", "words.csv") as df:
+            db = pd.read_csv(df, header=None)
         db.columns = ['text', 'tags_raw']
         db['tags'] = db['tags_raw'].apply(lambda x: str(x).split('|') if not pd.isna(x) else [])
         self.db = db[['text', 'tags']]
